@@ -18,6 +18,21 @@ gem 'jquery-rails'
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+
+gem 'mongoid'
+
+# for image video uploading
+gem 'carrierwave'
+#
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+# device for authentication
+gem 'devise', '3.4.1', :git => 'git://github.com/plataformatec/devise.git'
+
+# bower font end package manager
+gem 'bower-rails', '0.9.2'
+
+# for using rails template with as angular template with extension .html.erb/haml
+gem 'angular-rails-templates'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -28,7 +43,17 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-gem 'capistrano-rails', group: :development
+# gem "binding_of_caller" for advance feature of better error
+group :development do
+  gem 'capistrano-rails', group: :development
+  gem 'bullet'
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'peek'
+  gem 'awesome_print'
+  gem 'meta_request'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
